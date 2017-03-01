@@ -15,4 +15,16 @@ suite('when entering a club', function () {
 
         assert.equal(visitorEnteredClub, false);
     });
+
+    test("non-adult visitors can't enter club", function() {
+        let visitor = new VisitorBuilder()
+            .setAge(14)
+            .build();
+        let club = new Club();
+
+        let visitorEnteredClub = visitor.enter(club);
+
+        assert.equal(visitorEnteredClub, false);
+    });
+
 });

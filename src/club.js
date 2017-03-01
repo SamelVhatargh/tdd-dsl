@@ -2,7 +2,7 @@
 
 class Club {
     canBeEnteredBy(visitor) {
-        return visitor.isSober;
+        return visitor.isSober && visitor.age > 18;
     }
 }
 
