@@ -1,9 +1,10 @@
 "use strict";
 
 class Visitor {
-    constructor(isSober, age) {
+    constructor(isSober, age, parent) {
         this._isSober = isSober;
         this._age = age;
+        this._parent = parent;
     }
 
     get isSober() {
@@ -12,6 +13,10 @@ class Visitor {
 
     get age() {
         return this._age;
+    }
+
+    get parent() {
+        return this._parent;
     }
 
     enter(club) {

@@ -6,6 +6,7 @@ class VisitorBuilder {
     constructor() {
         this._isSober = true;
         this._age = 18;
+        this._parent = 'alex';
     }
 
     setSober(isSober) {
@@ -18,8 +19,13 @@ class VisitorBuilder {
         return this;
     }
 
+    setParent(name) {
+        this._parent = name;
+        return this;
+    }
+
     build() {
-        return new Visitor(this._isSober, this._age);
+        return new Visitor(this._isSober, this._age, this._parent);
     }
 }
 
