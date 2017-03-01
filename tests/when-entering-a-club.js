@@ -10,23 +10,23 @@ suite('when entering a club', function () {
     }
 
     test("drunk visitors can't enter club", function() {
-        let visitor = new VisitorBuilder()
+        let drunkVisitor = new VisitorBuilder()
             .setSober(false)
             .build();
         let club = createClub();
 
-        let visitorEnteredClub = visitor.enter(club);
+        let visitorEnteredClub = drunkVisitor.enter(club);
 
         assert.equal(visitorEnteredClub, false);
     });
 
     test("non-adult visitors can't enter club", function() {
-        let visitor = new VisitorBuilder()
+        let youngVisitor = new VisitorBuilder()
             .setAge(14)
             .build();
         let club = createClub();
 
-        let visitorEnteredClub = visitor.enter(club);
+        let visitorEnteredClub = youngVisitor.enter(club);
 
         assert.equal(visitorEnteredClub, false);
     });
